@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app">
+
+        <div class="row">
+            <div class="navbars flex">
+                <div class="logo">
+                    <a href="">
+                        <img src="https://fpt.vn/assets/images/fpt-logo.svg" alt="">
+
+                    </a>
+                </div>
+                <!-- navbar PC -->
+                <div class="nav-item">
+                    <a class="link active" href="#">Home</a>
+                    <a class="link" href="#">About</a>
+                    <a class="link" href="#">Contact</a>
+                    <a class="link" href="#">Sevice</a>
+                    <a class="link" href="#">News</a>
+                    <a href="javascript:void(0);" class="icon" onclick="document.getElementById('navtop').style.display='block'">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Navs Mobile -->
+            <div class="mobile modal animation" id="navtop">
+                <span class="close" onclick="document.getElementById('navtop').style.display='none'">&times;</span>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Sevice</a>
+                <a href="#">News</a>
+            </div>
+        </div>
+        <!-- End navs -->
+
+        <!-- Slider -->
+        <div class="row">
+          
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
