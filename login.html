@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Asset/login.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="app">
+        <div class="container form-content">
+            <form action="" name="login" onsubmit="return validateForm()">
+                <div class="container">
+                    <label for="">Email</label>
+                    <input type="text" name="email" placeholder="Email">
+                    <span></span>
+                </div>
+
+                <div class="container">
+                    <label for="">Password</label>
+                    <input type="password" name="password" placeholder="Password">
+                    <span></span>
+                </div>
+
+                <div class="container">
+                    <input type="submit" name="btn" value="SUBMIT">
+                    <span></span>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const isMail = document.forms['login']['email'].value;
+            const isPassword = document.forms['login']['password'].value;
+
+            /* Validate email*/ 
+            if (isMail == '' || isMail == null) {
+                alert("Email không được để trống");
+                return false;
+            }
+            /* Validate password */ 
+            if (isPassword == '' || isPassword == null) {
+                alert("Password không được để trống");
+                return false;
+            } else if (isPassword.length < 5) {
+                alert("Password qúa ngắn");
+                return false;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

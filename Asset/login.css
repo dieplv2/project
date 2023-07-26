@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+.container {
+    width: 100%;
+    padding: 5px;
+    margin:  0 auto;
+    overflow: hidden;
+    color: #fff;
+}
+
+.app {
+    background-image: url("../img/bg.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .form-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15%;
+  }
+
+  input[type=text],input[type=password] {
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+  }
+  input[type=text]:focus,input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  label {
+    display: block;
+    padding: 10px 0;
+  }
+  input[type=submit] {
+    width: 100%;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    background-color: #04AA6D;
+    color: #fff;
+  }

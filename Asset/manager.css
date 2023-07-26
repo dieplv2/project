@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+.row {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    padding: 5px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.midium>a:hover,
+.nav-item>a:hover, .active{
+    color: orangered;background-color: #fff;
+}
+.search {
+    padding: 20px 0;
+    border-bottom: 1.5px solid #ccc;
+    width: 100%;
+}
+.search .container{
+    width: 80%;
+    margin: 0 auto;
+}
+.search span {
+    display: block;
+    text-align: right;
+    align-items: 10px;
+}
+.search span:hover {
+    cursor: pointer;
+}
+/* Sidesbar */
+
+#left {
+    position: fixed;
+    height: 100%;
+    width: 20%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px;
+}
+
+.nav-item a {
+    display: block;
+    padding: 8px 24px;
+    font-size: 20px;
+}
+.nav-item a:hover {
+    background-color: #fff;
+}
+/* ======== */
+#right {
+    float: right;
+    width: 80%;
+    transition: 0.5s;
+}
+
+/* Css toggle icon bar and times */
+.start {
+    float: right;
+    font-size: 15px;
+    padding:10px;
+    color: blue;
+    cursor: pointer;
+    border: 2px solid;
+    text-align: center;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+
+.start .icon-open {
+    display: none;
+}
+.start.starting .icon-open {
+    display: inline-block;
+}
+.start.starting .icon-close{
+    display: none;
+}
+
+/* End */
+
+/* Pagetitle */
+
+.pageTitle {
+    text-align: center;
+    padding: 24px 0;
+    text-transform: uppercase;
+    color: blue;
+    border-bottom: 1.5px solid #ddd;
+}
+/* midium menu */
+.midium>a {
+    padding: 15px 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+
+/* Input */
+.create-form {
+    padding: 20px 0;
+}
+
+.content-item {
+    display: block;
+    width: 95%;
+    margin: 0 auto;
+    background-color: #ccc;
+}
+
+input[type=text],input[type=search], textarea, select, input[type=date] {
+    width: 100%;
+    padding: 12px 8px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+}
+
+input[type=text]:focus, textarea:focus, section:focus,input[type=search]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+label {
+    font-size: 1.2em;
+}
+
+/* table */
+
+.table {
+    padding-top: 50px;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: #f2f2f2}

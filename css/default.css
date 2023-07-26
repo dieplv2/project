@@ -1,0 +1,357 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #888
+}
+.app {
+    width: 100%;
+    max-width: 100%;
+}
+.row {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.active,.nav-list>li:hover a, .mobile a:hover {
+    color: orangered;
+}
+
+/* header */
+.header {
+    width: 95%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+.nav-list{
+    gap: 2em;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.icon span{
+    display: inline-block;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.icon span:hover i {
+    color: orangered;
+}
+.icon span:nth-child(3) {
+    display: none;
+}
+
+/* Nav mobile */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: rgb(0,0,0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;   
+}
+.mobile{
+    background-color: #ccc;
+    position: relative;
+    width: 100%;
+    top: 25%;
+    text-align: center;
+    font-size: 17px;
+}
+.mobile a {
+    display: block;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 8px 12px;
+}
+.btnclose {
+    position: relative;
+    float: right;
+    display: block;
+    font-size: 30px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* product-list */
+.product {
+    padding: 50px 0;
+    margin-top: 60px;
+}
+.product-list {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-list li {
+    width: 20%;
+    padding: 0 5px;
+}
+.product-list li img {
+    border-radius: 3px;
+}
+/* Best seller */
+.introduce {
+    padding-bottom: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.introduce h2 {
+    text-transform: uppercase;
+    color: #000;
+    padding: 60px 0 7px 0;
+}
+.introduce i {
+    display: block;
+    padding-bottom: 7px;
+}
+
+.introduce p {
+    line-height: 1.5;
+    font-size: 1.2em;
+}
+
+/* right */
+
+.price {
+    display: block;
+    font-size: 1.2em;
+    text-align: center;
+}
+.price p {
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    padding: 10px 0;
+}
+.price a {
+    font-size: 1.3em;
+    color: orangered;
+    font-weight: 500;
+}
+button {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 12px 8px;
+    background-color: orangered;
+    color: #fff;
+    opacity: 0.8;
+    cursor: pointer;
+    border-radius: 3px;
+}
+button:hover {
+    opacity: 1;
+}
+
+/* Siping shiping */
+
+.shiping {
+    padding: 50px 0;
+    margin-top: 60px;
+    text-align: center;
+}
+.list-img {
+    display: flex;
+    flex-wrap: wrap;
+}
+.list-img li {
+    width: 25%;
+    text-align: center;
+}
+.list-img li h2 {
+    text-transform: uppercase;
+    font-size: .8em;
+    padding: 5px 0;
+    color: #000;
+}
+.list-img li p {
+    font-size: .8em;
+}
+
+/* promotion */
+.promotion {
+    background-color: #2e3348;
+    padding: 50px 0;
+    margin-top: 60px;
+}
+.promotion-item {
+    width: 30%;
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* feature */
+.pagetile {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.feature {
+    padding: 50px 0;
+    margin-top: 60px;
+    letter-spacing: 1.5px;
+}
+.feature h2 {
+    color: #000;
+    font-size: 1.6em;
+    text-transform: uppercase;
+}
+
+.product-list li {
+    margin-bottom: 15px;
+
+}
+
+/* Discound - Brands */
+.brands-discound {
+    padding: 50px 0;
+    margin-top: 60px;
+}
+.brands {
+    background: #2e3348 url("../img/bgform.jpg") no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 250px;
+    text-align: center;
+    width: 50%;
+}
+.brands h2 {
+    padding-top: 60px;
+    color: #fff;
+}
+.brands p {
+    padding: 15px 0;
+    display: block;
+    width: 60%;
+    margin:  0 auto;
+}
+input[type=text] {
+    width: 40%;
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    border-radius: 3px 0 0 3px;
+
+}
+input[type=text]:focus {
+    background-color: #ccc;
+    outline: none;
+}
+input[type=submit] {
+    width: 15%;
+    padding: 8px 12px;
+    border: none;
+    outline: none;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    color: #000;
+}
+input[type=submit]:hover {
+    opacity: .8;
+}
+/* discound */
+
+.discound {
+    width: 50%;
+    background-color: #f5f6f9;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.discound img {
+    width: 100%;
+}
+
+/* footer */
+.footer {
+    background-color: #000;
+    padding: 20px 0;
+    font-size: 1.1em;
+   
+}
+.footer img,
+.footer p {
+    text-align: center;
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+    
+}
+/* Reponsive */
+
+@media only screen and (max-width: 900px) {
+    .navbar {
+        display: none;
+    }
+    .icon span:nth-child(3) {
+        display: inline-block;
+    }
+
+    /* Product */
+    .product-list li.introduce{
+        width: 100%;
+    }
+
+    .product-list li {
+        width: 50%;
+    }
+    /* Shiping */
+    .list-img li {
+        width: 50%;
+        padding-bottom: 40px;
+    }
+    /* promotion */
+    #promotion {
+        flex-direction: column;
+    }
+    .promotion-item {
+        width: 100%;
+    }
+    /* brands-discound */
+    .brands-discound {
+        flex-direction: column;
+    }
+    .brands {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .brands img {
+        width: 100%;
+    }
+    .discound {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    /*  footer*/
+    #footer {
+        flex-direction: column-reverse;
+    }
+    #footer p {
+        padding: 10px 0;
+    }
+}
