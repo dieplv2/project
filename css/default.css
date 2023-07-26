@@ -13,7 +13,6 @@
     max-width: 100%;
     overflow: hidden;
     margin: 0 auto;
-    background-color: #fff;
 }
 
 .flex {
@@ -95,11 +94,15 @@ a {
     right: 10px;
     cursor: pointer;
 }
+.slide {
+    background-color: #fff;
+}
+
 
 /* product-list */
 .product {
-    padding: 50px 0;
-    margin-top: 60px;
+    padding: 60px 0;
+    background-color: #fff;
 }
 .product-list {
     width: 100%;
@@ -170,9 +173,9 @@ button:hover {
 /* Siping shiping */
 
 .shiping {
-    padding: 50px 0;
-    margin-top: 60px;
+    padding: 60px 0;
     text-align: center;
+    background-color: #f1f1f1f1;
 }
 .list-img {
     display: flex;
@@ -195,8 +198,7 @@ button:hover {
 /* promotion */
 .promotion {
     background-color: #2e3348;
-    padding: 50px 0;
-    margin-top: 60px;
+    padding: 60px 0;
 }
 .promotion-item {
     width: 30%;
@@ -211,9 +213,9 @@ button:hover {
 }
 
 .feature {
-    padding: 50px 0;
-    margin-top: 60px;
+    padding: 60px 0;
     letter-spacing: 1.5px;
+    background-color: #fff;
 }
 .feature h2 {
     color: #000;
@@ -230,6 +232,7 @@ button:hover {
 .brands-discound {
     padding: 50px 0;
     margin-top: 60px;
+    background-color: #fff;
 }
 .brands {
     background: #2e3348 url("../img/bgform.jpg") no-repeat;
