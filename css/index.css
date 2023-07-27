@@ -97,8 +97,6 @@ a {
 .slide {
     background-color: #fff;
 }
-
-
 /* product-list */
 .product {
     padding: 60px 0;
@@ -155,18 +153,18 @@ a {
     color: orangered;
     font-weight: 500;
 }
-button {
-    width: 100%;
+p>button {
+    width: auto;
     border: none;
     outline: none;
-    padding: 12px 8px;
+    padding: 11px 60px;
     background-color: orangered;
     color: #fff;
     opacity: 0.8;
     cursor: pointer;
     border-radius: 3px;
 }
-button:hover {
+p>button:hover {
     opacity: 1;
 }
 
@@ -199,6 +197,7 @@ button:hover {
 .promotion {
     background-color: #2e3348;
     padding: 60px 0;
+    position: relative;
 }
 .promotion-item {
     width: 30%;
@@ -206,6 +205,19 @@ button:hover {
     padding: 40px 0;
 }
 
+.promotion>button.next,
+.promotion>button.prev{
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    color: #fff;
+    font-size: 35px;
+    display: none;
+}
+.promotion>button.next {
+    right: 0;
+}
 /* feature */
 .pagetile {
     text-align: center;
@@ -308,6 +320,9 @@ input[type=submit]:hover {
 /* Reponsive */
 
 @media only screen and (max-width: 900px) {
+    .header {
+        width: 100%;
+    }
     .navbar {
         display: none;
     }
@@ -334,6 +349,9 @@ input[type=submit]:hover {
     }
     .promotion-item {
         width: 100%;
+    }
+    .promotion>button.next, .promotion>button.prev {
+        display: block;
     }
     /* brands-discound */
     .brands-discound {
