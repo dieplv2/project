@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app">
+
+        <div class="row">
+            <div class="navbars flex">
+                <div class="logo">
+                    <a href="">
+                        <img src="https://fpt.vn/assets/images/fpt-logo.svg" alt="">
+
+                    </a>
+                </div>
+                <!-- navbar PC -->
+                <div class="nav-item">
+                    <a class="link active" href="#">Home</a>
+                    <a class="link" href="#">About</a>
+                    <a class="link" href="#">Contact</a>
+                    <a class="link" href="#">Sevice</a>
+                    <a class="link" href="#">News</a>
+                    <a href="javascript:void(0);" class="icon"
+                        onclick="document.getElementById('navtop').style.display='block'">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Navs Mobile -->
+            <div class="mobile modal animation" id="navtop">
+                <span class="close" onclick="document.getElementById('navtop').style.display='none'">&times;</span>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Sevice</a>
+                <a href="#">News</a>
+            </div>
+        </div>
+        <!-- End navs -->
+
+        <!-- Slider -->
+        <div class="row">
+            <div class="big-baner">
+                <a href="#" class="paner-modal">
+                    <img src="./img/img (1).png" alt="" width="100%" class="side">
+                    <img src="./img/img (2).png" alt="" width="100%" class="side">
+                    <img src="./img/img (3).png" alt="" width="100%" class="side">
+                </a>
+            </div>
+        </div>
+        <!-- end slide -->
+        <div class="row">
+            <div class="pageTitle">
+                <h3>Product</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="list-card flex">
+                <div class="card">
+                    <img src="./img/img-product (2).png" alt="Denim Jeans" style="width:100%">
+                    <h1>Camera</h1>
+                    <p class="price">$19.99</p>
+                    <p>Some text about the jeans..</p>
+                    <p><button>Add to Cart</button></p>
+                </div>
+
+                <div class="card">
+                    <img src="./img/img-product (3).png" alt="Denim Jeans" style="width:100%">
+                    <h1>Interner</h1>
+                    <p class="price">$19.99</p>
+                    <p>Some text about the jeans..</p>
+                    <p><button>Add to Cart</button></p>
+                </div>
+
+                <div class="card">
+                    <img src="./img/img-product (4).png" alt="Denim Jeans" style="width:100%">
+                    <h1>Truyen Hinh</h1>
+                    <p class="price">$19.99</p>
+                    <p>Some text about the jeans..</p>
+                    <p><button>Add to Cart</button></p>
+                </div>
+
+                <div class="card">
+                    <img src="./img/img-product (5).png" alt="Denim Jeans" style="width:100%">
+                    <h1>Cap quang</h1>
+                    <p class="price">$19.99</p>
+                    <p>Some text about the jeans..</p>
+                    <p><button>Add to Cart</button></p>
+                </div>
+
+                
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </div>
+        <div>
+            
+        </div>
+
+        <div class="row" style="min-height: 1000px; background-color: aquamarine;">
+            <a href="./default.html" style="text-align: center;">test</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
