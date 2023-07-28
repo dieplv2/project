@@ -7,33 +7,20 @@ let btnClose = $(".btnclose");
 const App = {
     /* Add to cart*/ 
     addtocart: function() {
-       
-        
-        function addItemtocart(name, price, count) {
-           const cart = {key: [name, price, count]}
-
-            for(let i = 0; i< cart.length; i++) {
-                if(cart[i].name == name) {
-                    cart[i].count++;
-                    localStorage.setItem("shoppingCart",name, price, 1)
-                }
-            }
-        }
-
-        const btnAdd = $$(".add-to-cart")
+       let btnAdd = $$(".add-to-cart");
 
        for(let i = 0; i < btnAdd.length; i++) {
-        btnAdd[i].addEventListener("click", function(event){
-            event.preventDefault();
-            
-            let name = this.getAttribute("data-name")
-            let price = this.getAttribute("price")
+            btnAdd[i].addEventListener("click", function(){
+                let name = btnAdd[i].getAttribute("data-name");
+                let price = btnAdd[i].getAttribute("price");
+                const task = [];
 
-            localStorage.setItem("shoppingCart", addItemtocart(name, price, 1))
+                task.push({keyName: name, price})
 
-            console.log(localStorage.getItem("shoppingCart"));
-        })
+                console.log(task)
+            })
        }
+        
     },
 
     /* Promotion */

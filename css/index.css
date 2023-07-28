@@ -386,6 +386,7 @@ input[type=submit]:hover {
 .discound-list li:nth-child(4) a{
     background-position: -671px;
 }
+
 /* footer */
 .footer {
     background-color: #000;
@@ -471,18 +472,22 @@ input[type=submit]:hover {
         height: 150px;
     }
 
-    .discound-list li:nth-child(1) a{
-        background-position: 150px;
+    .discound-list li:nth-child(1) a {
+        background-position: 121px;
     }
-    .discound-list li:nth-child(2) a{
+    
+    .discound-list li:nth-child(2) a {
         background-position: -100px;
     }
-    .discound-list li:nth-child(3) a{
-        background-position: -327px;
+    
+    .discound-list li:nth-child(3) a {
+        background-position: -590px;
     }
-    .discound-list li:nth-child(4) a{
-        background-position: -579px;
+    
+    .discound-list li:nth-child(4) a {
+        background-position: -590px;
     }
+   
 
     /*  footer*/
     #footer {
@@ -494,9 +499,9 @@ input[type=submit]:hover {
 }
 
 
-/* @media only screen and (max-width: 768px) {
+ @media only screen and (max-width: 768px) {
     .discound-list li:nth-child(1) a{
-        background-position: 100;
+        background-position: 35px;
     }
     .discound-list li:nth-child(2) a{
         background-position: -216px;
@@ -508,4 +513,4 @@ input[type=submit]:hover {
         background-position: -671px;
     }
 
-} */
+}
