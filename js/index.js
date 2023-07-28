@@ -30,7 +30,7 @@ const App = {
             for (let i = 0; i < promotions.length; i++) {
 
                 if (maxWidth < 900) {
-                    promotions[i].style.display = "none"
+                    // promotions[i].style.display = "none"
 
                 }
             }
@@ -75,20 +75,16 @@ const App = {
             }
         }
     },
+
     /* List products*/
     define: htmls = '',
 
     datas: [
-        { id: 1, name: "Ao nam", cat_id: 1, sku: 123, price: 150.000, price_sale: 90.000, img: "./img/p2.jpg", decs: "header headerheaderheaderheaderheader" },
-        { id: 2, name: "Ao nu", cat_id: 2, sku: 456, price: 150.000, price_sale: 90.000, img: "./img/p3.jpg", decs: "header headerheaderheaderheaderheader" },
-        { id: 3, name: "Ao nu", cat_id: 3, sku: 789, price: 150.000, price_sale: 90.000, img: "./img/p1.jpg", decs: "header headerheaderheaderheaderheader" },
-        { id: 4, name: "Ao nu", cat_id: 3, sku: 123, price: 150.000, price_sale: 90.000, img: "./img/p3.jpg", decs: "header headerheaderheaderheaderheader" },
-        { id: 5, name: "Ao nu", cat_id: 3, sku: 452, price: 150.000, price_sale: 90.000, img: "./img/p2.jpg", decs: "header headerheaderheaderheaderheader" },
-        { id: 6, name: "Ao Nam", cat_id: 3, sku: 123, price: 150.000, price_sale: 90.000, img: "./img/p1.jpg", decs: "header headerheaderheaderheaderheader" },
-        { id: 7, name: "Ao nu", cat_id: 2, sku: 123, price: 150.000, price_sale: 90.000, img: "./img/p2.jpg", decs: "header headerheaderheaderheaderheader" },
-        { id: 8, name: "Ao nu", cat_id: 2, sku: 123, price: 150.000, price_sale: 90.000, img: "./img/p3.jpg", decs: "header headerheaderheaderheaderheader" },
-        { id: 9, name: "Ao nu", cat_id: 1, sku: 123, price: 150.000, price_sale: 90.000, img: "./img/p1.jpg", decs: "header headerheaderheaderheaderheader" },
-        { id: 10, name: "Ao nu", cat_id: 2, sku: 123, price: 150.000, price_sale: 90.000, img: "./img/p2.jpg", decs: "header headerheaderheaderheaderheader" },
+        { id: 1, name: "Áo phông nam", cat_id: 1, sku: 123, price: 150.000, price_sale: 90.000, img: "./img/p2.jpg", decs: "header headerheaderheaderheaderheader" },
+        { id: 2, name: "Áo Nữ", cat_id: 2, sku: 456, price: 150.000, price_sale: 90.000, img: "./img/p3.jpg", decs: "header headerheaderheaderheaderheader" },
+        { id: 3, name: "Giày Nam", cat_id: 3, sku: 789, price: 150.000, price_sale: 90.000, img: "./img/p1.jpg", decs: "header headerheaderheaderheaderheader" },
+        { id: 4, name: "Áo ghi nữ", cat_id: 3, sku: 123, price: 150.000, price_sale: 90.000, img: "./img/p3.jpg", decs: "header headerheaderheaderheaderheader" },
+        { id: 5, name: "Áo phông nam", cat_id: 3, sku: 452, price: 150.000, price_sale: 90.000, img: "./img/p2.jpg", decs: "header headerheaderheaderheaderheader" },
     ],
     /*Render data*/
     render: function () {
@@ -100,17 +96,22 @@ const App = {
         let Att = setAtt.value = "introduce";
 
         this.htmls = this.datas.map(function (data, index) {
-            let img = `<img src="${data.img}" alt="" style="width: 100%;">`
+            let img = `<img src="${data.img}" alt="">`
             return `
                     <li class="${index == 0 ? Att : ''}">
                         <a href="${data.id}">
                         ${index == 0 ? bestsellers + smalldesc + desc : img} </a>
                         <div class="price">
-                            <p>${index == 0 ? " " : data.name}</p>
+                            <a href="">${index == 0 ? " " : data.name}</a>
 
-                            <a href="">${index == 0 ? "" : (data.price).toPrecision(6)}</a>
-                            <p>${index == 0 ? "" : `<button>Add store</button>`}</p>
+                            <p>${index == 0 ? "" : (data.price).toPrecision(6)}</p>
+                      
                         </div>
+                        <span class="buy">
+                            ${index == 0 ? "" : `<a href=""><i class="fas fa-store"></i></a>
+                            <a href=""><i class="fas fa-heart"></i></a> 
+                            <a href=""><i class="fas fa-exchange-alt"></i></a>`}
+                        </span>
                     </li>
             
                 `
