@@ -5,13 +5,42 @@ let open = $(".icon-open");
 let btnClose = $(".btnclose");
 
 const App = {
-    /* Promotion */
+    /* Add to cart*/ 
+    addtocart: function() {
+       
+        
+        function addItemtocart(name, price, count) {
+           const cart = {key: [name, price, count]}
 
+            for(let i = 0; i< cart.length; i++) {
+                if(cart[i].name == name) {
+                    cart[i].count++;
+                    localStorage.setItem("shoppingCart",name, price, 1)
+                }
+            }
+        }
+
+        const btnAdd = $$(".add-to-cart")
+
+       for(let i = 0; i < btnAdd.length; i++) {
+        btnAdd[i].addEventListener("click", function(event){
+            event.preventDefault();
+            
+            let name = this.getAttribute("data-name")
+            let price = this.getAttribute("price")
+
+            localStorage.setItem("shoppingCart", addItemtocart(name, price, 1))
+
+            console.log(localStorage.getItem("shoppingCart"));
+        })
+       }
+    },
+
+    /* Promotion */
     promotion: function () {
         let promotions = $$(".promotion-item");
         let _btn = $$(".btn-click");
         let maxWidth = $("#promotion").offsetWidth;
-        console.log(maxWidth);
 
         let currentIndex = 1;
         showSlide(currentIndex);
@@ -102,7 +131,7 @@ const App = {
                         <a href="${data.id}">
                         ${index == 0 ? bestsellers + smalldesc + desc : img} </a>
                         <div class="price">
-                            <a href="">${index == 0 ? " " : data.name}</a>
+                            <a href="" data-name="${data.name}">${index == 0 ? " " : data.name}</a>
 
                             <p>${index == 0 ? "" : (data.price).toPrecision(6)}</p>
                       
@@ -124,6 +153,7 @@ const App = {
         this.navbar()
         this.slides()
         this.promotion()
+        this.addtocart()
     }
 }
 
