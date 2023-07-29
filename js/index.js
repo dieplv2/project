@@ -89,7 +89,6 @@ const App = {
     /* List products*/
     define: htmls = '',
 
-    // product: proApi = 'http://localhost:3000/products',
     /*Render data*/
     render: function () {
         const proApi = 'http://localhost:3000/products'
@@ -99,6 +98,7 @@ const App = {
                 return response.json();
             })
             .then(function(products){
+               
                 
                 let bestsellers = "<h2>bestsellers </h2>"
                 let smalldesc = "<i>The best productions from us</i>"

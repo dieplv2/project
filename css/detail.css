@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #888;
+    color: #333;
 }
 
 body {
@@ -31,7 +31,7 @@ a {
 .mobile-content a:hover,
 .nav-item>a:hover,
 .link.active {
-    color: orangered
+    color: #3cb878
 }
 
 .header {
@@ -49,6 +49,18 @@ a {
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 700;
+}
+
+.icon-add {
+    width: 17px;
+    height: 17px;
+    padding: 5px;
+    line-height: 5px;
+    background-color: #3cb878;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: -10px;
 }
 
 .icon a.icon-bar {
@@ -91,34 +103,50 @@ a {
 /* Detail */
 
 .container {
-    width: 85%;
+    width: 80%;
     margin: 0 auto;
     background: #fff;
-    padding: 50px 0;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
 }
 
 
-.detail-info,
+.detail-info {
+    width: 40%;
+    padding: 10px;
+}
 .detail-img {
-    width: 50%;
+    width: 60%;
 }
 
 .detail-img {
-    display: flex;
-    flex-wrap: wrap;
+    /* float: right; */
+    /* display: flex; */
 }
+
+.detail-img:not(:first-child) {
+    /* flex-wrap: wrap; */
+}
+
 
 .img-item:nth-child(1) {
-    width: 100%;
+    width: 45%;
 }
 
 .img-item {
-    width: 16.66%;
-    padding: 0 2px;
+    float: left;
+    width: 22%;
     cursor: pointer;
+    margin: 2px;
+}
+.img-item:hover {
+    opacity: 0.9;
+}
+.img-item img {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
 }
 
 .info-content {
@@ -126,17 +154,17 @@ a {
 }
 
 .info-content h2 {
-    font-size: 1.3em;
+    font-size: 1.1em;
     padding: 10px 0;
-    color: #000;
 }
 
 .info-content p.price {
-    font-size: 3em;
-    color: orangered;
+    font-size: 1.5em;
+    letter-spacing: .3em;
+    line-height: 1.8;
+    color: #fff;
     font-weight: 700;
-    padding: 10px 10px;
-    background-color: #ddd;
+    background-color: #3cb878;
     text-align: center;
 }
 
@@ -146,6 +174,7 @@ a {
 }
 
 .info-content button {
+    display: inline-block;
     padding: 12px 24px;
     border: none;
     outline: none;
@@ -154,12 +183,13 @@ a {
 }
 
 .info-content button.add {
+    padding: 12px 30px;
     background: #ddd;
-    color: orangered;
+    color: #3cb878;
 }
 
-.info-content button.buy {
-    background: orangered;
+.info-content button.buy-now {
+    background: #3cb878;
     color: #fff;
 }
 
@@ -169,51 +199,73 @@ a {
 /* pagetitle */
 .pagetitle {
     text-align: center;
-    padding: 20px 0;
+    padding: 1em 0;
+    font-size: 1.2em;
     text-transform: uppercase;
 }
 /* Product */
+
+/* product-list */
+.product {
+    padding: 60px 0;
+    background-color: #fff;
+}
 .product-list {
+    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
-.product-list li img {
-    width: 100%;
-    border-radius: 3px;
-}
-
 .product-list li {
+    position: relative;
     width: 20%;
-    padding: 5px;
-    cursor: pointer;
-    opacity: .9;
 }
-.product-list li h2 {
-    text-align: center;
-    padding: 10px 0;
-}
-.product-list li p {
-    font-size: 2em;
-    text-align: center;
-    padding: 10px;
-    font-weight: 700;
-    color: orangered;
-}
-.product-list li button {
-    width: 90%;
-    border: none;
-    outline: none;
-    padding: 12px 8px;
+.product-list li img {
+    border-radius: 3px;
+    width: 85%;
     margin: 0 auto;
     display: block;
-    color: #fff;
-    background-color: orangered;
-    opacity: .9;
 }
-.product-list li:hover,
-.product-list li button:hover {
-    opacity: 1;
+.product-list li:hover .buy a{
+    background-color: #3cb878;
 }
+.buy {
+    width: 1.5625em;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 30px;
+}
+.buy a {
+    display: block;
+    overflow: hidden;
+    width: 1.5625em;
+    margin-bottom: 3px;
+}
+.buy a i{
+    color: #f8f8f8;
+    font-size: .7em;
+}
+/* product price */
+.price {
+    display: block;
+    font-size: 1.2em;
+    text-align: center;
+}
+.price p {
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    color: #3cb878;
+}
+.price a {
+    font-size: 1.2em;
+    display: block;
+    color: #333;
+    padding-top: 10px;
+}
+
+
 /* footer */
 .flex-item {
     width: 50%;
@@ -232,17 +284,24 @@ a {
 .flex-item p {
     padding: 10px 0;
     text-align: center;
+    color: #fff;
 }
 
 input[type=submit],
 input[type=text] {
-    padding: 8px 8px;
+    padding: 8px 12px;
     border: none;
     outline: none;
     border-radius: 3px;
 }
+input[type=text] {
+    width: 70%;
+}
 input[type=submit]{
     cursor: pointer;
+    width: 20%;
+    background-color: #3cb878;
+    color: #fff;
 }
 input[type=text]:focus {
     background-color: #ccc;
@@ -258,8 +317,42 @@ input[type=text]:focus {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    color: #fff;
+    background-color: #000;
+    padding: 20px 0;
 }
+
+.brand  {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+ul.brand li {
+    width: 25%;
+    height: 250px;
+    background-color: #ddd;
+}
+ul.brand li a {
+  display: block;
+  width: 100%;
+  height: 250px;
+  background-image: url(../img/brand.png);
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+}
+ul.brand li:nth-child(1) a {
+    background-position: 11px;
+}
+ul.brand li:nth-child(2) a {
+    background-position: -221px;
+}
+ul.brand li:nth-child(3) a {
+    background-position: -460px;
+}
+ul.brand li:nth-child(4) a {
+    background-position: -696px;
+}
+
 /* =======================Reponsive==================== */
 
 @media only screen and (max-width: 900px) {
@@ -293,4 +386,32 @@ input[type=text]:focus {
     .flex-item {
         width: 100%;
     }
+
+    .footed  {
+        flex-direction: column;
+        opacity: .8;
+        display: block;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    ul.brand li {
+        flex-direction: column;
+        width: 50%;
+    }
+    ul.brand li:nth-child(1) a {
+        background-position:17px;
+    }
+    ul.brand li:nth-child(2) a {
+        background-position: -424px;
+    }
+    ul.brand li:nth-child(3) a {
+        background-position: -676px;
+    }
+    ul.brand li:nth-child(4) a {
+        background-position: -211px;
+    }
+
 }
