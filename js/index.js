@@ -1,27 +1,21 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document)
 
+var productsApi = 'http://localhost:3000/products'
+
+fetch(productsApi)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(products){
+        // console.log(products)
+    });
+
+
 let open = $(".icon-open");
 let btnClose = $(".btnclose");
 
 const App = {
-    /* Add to cart*/ 
-    addtocart: function() {
-       let btnAdd = $$(".add-to-cart");
-
-       for(let i = 0; i < btnAdd.length; i++) {
-            btnAdd[i].addEventListener("click", function(){
-                let name = btnAdd[i].getAttribute("data-name");
-                let price = btnAdd[i].getAttribute("price");
-                const task = [];
-
-                task.push({keyName: name, price})
-
-                console.log(task)
-            })
-       }
-        
-    },
 
     /* Promotion */
     promotion: function () {
@@ -95,52 +89,74 @@ const App = {
     /* List products*/
     define: htmls = '',
 
-    datas: [
-        { id: 1, name: "Áo phông nam", cat_id: 1, sku: 123, price: 150.000, price_sale: 90.000, img: "./img/p2.jpg", decs: "header headerheaderheaderheaderheader" },
-        { id: 2, name: "Áo Nữ", cat_id: 2, sku: 456, price: 150.000, price_sale: 90.000, img: "./img/p3.jpg", decs: "header headerheaderheaderheaderheader" },
-        { id: 3, name: "Giày Nam", cat_id: 3, sku: 789, price: 150.000, price_sale: 90.000, img: "./img/p1.jpg", decs: "header headerheaderheaderheaderheader" },
-        { id: 4, name: "Áo ghi nữ", cat_id: 3, sku: 123, price: 150.000, price_sale: 90.000, img: "./img/p3.jpg", decs: "header headerheaderheaderheaderheader" },
-        { id: 5, name: "Áo phông nam", cat_id: 3, sku: 452, price: 150.000, price_sale: 90.000, img: "./img/p2.jpg", decs: "header headerheaderheaderheaderheader" },
-    ],
+    // product: proApi = 'http://localhost:3000/products',
     /*Render data*/
     render: function () {
-        let bestsellers = "<h2>bestsellers </h2>"
-        let smalldesc = "<i>The best productions from us</i>"
-        let desc = "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla deleniti amet et offici recusandae fuga asperiores eos ad doloribus. </p> "
+        const proApi = 'http://localhost:3000/products'
+        // const cartegoryApi = 'http://localhost:3000/category';
+        fetch(proApi)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(products){
+                
+                let bestsellers = "<h2>bestsellers </h2>"
+                let smalldesc = "<i>The best productions from us</i>"
+                let desc = "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla deleniti amet et offici recusandae fuga asperiores eos ad doloribus. </p> "
+        
+                const setAtt = document.createAttribute("class");
+                let Att = setAtt.value = "introduce";
+        
+                this.htmls = products.map(function (product, index) {
+                    let img = `<img src="${product.imgs.thumnail}" alt="">`
+                    return `
+                            <li class="${index == 0 ? Att : ''}">
+                                <a href="#" data-name="${product.id}" class="thumnail">
+                                ${index == 0 ? bestsellers + smalldesc + desc : img} </a>
+                                <div class="price">
+                                    <a href="#" data-name="${product.name}" data-price="${index == 0 ? "" : (product.price).toPrecision(6)}" class="add-to-cart">${index == 0 ? " " : product.name}</a>
+        
+                                    <p>${index == 0 ? "" : (product.price).toPrecision(6)}</p>
+                              
+                                </div>
+                                <span class="buy">
+                                    ${index == 0 ? "" : `<a href=""><i class="fas fa-store"></i></a>
+                                    <a href=""><i class="fas fa-heart"></i></a> 
+                                    <a href=""><i class="fas fa-exchange-alt"></i></a>`}
+                                </span>
+                            </li>
+                    
+                        `
+                })
+                $(".product-list").innerHTML = this.htmls.join("");
 
-        const setAtt = document.createAttribute("class");
-        let Att = setAtt.value = "introduce";
+            });
 
-        this.htmls = this.datas.map(function (data, index) {
-            let img = `<img src="${data.img}" alt="">`
-            return `
-                    <li class="${index == 0 ? Att : ''}">
-                        <a href="${data.id}">
-                        ${index == 0 ? bestsellers + smalldesc + desc : img} </a>
-                        <div class="price">
-                            <a href="" data-name="${data.name}">${index == 0 ? " " : data.name}</a>
 
-                            <p>${index == 0 ? "" : (data.price).toPrecision(6)}</p>
-                      
-                        </div>
-                        <span class="buy">
-                            ${index == 0 ? "" : `<a href=""><i class="fas fa-store"></i></a>
-                            <a href=""><i class="fas fa-heart"></i></a> 
-                            <a href=""><i class="fas fa-exchange-alt"></i></a>`}
-                        </span>
-                    </li>
-            
-                `
-        })
-        $(".product-list").innerHTML = this.htmls.join("");
     },
 
+    /* add localStorega */ 
+    getProductDetail: function() {
+
+        let products = $$(".thumnail");
+        
+        for(let i = 0; i < products.length; i++) {
+
+            products[i].addEventListener("click", function() {
+                let getImgs = products[i].getAttribute("data-name");
+       
+                window.location = "./detail.html"
+            })
+        }
+    },
+
+    /* Start  */ 
     start: function () {
         this.render()
         this.navbar()
         this.slides()
         this.promotion()
-        this.addtocart()
+        this.getProductDetail()
     }
 }
 
